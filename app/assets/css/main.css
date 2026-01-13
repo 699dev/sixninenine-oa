@@ -121,11 +121,23 @@
     html {
         @apply scroll-smooth h-full;
     }
+
     body {
         @apply bg-background text-foreground;
     }
 
     #__nuxt {
         @apply flex grow;
+    }
+}
+
+
+.container-fluid {
+    @apply w-full px-4 m-auto;
+}
+
+@media (min-width: 64rem) {
+    .container-fluid {
+        @apply px-5;
     }
 }

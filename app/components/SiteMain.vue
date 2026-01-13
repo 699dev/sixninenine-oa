@@ -2,94 +2,7 @@
     <template v-if="!open">
         <WrapperTrigger />
     </template>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
-    <p>SixNineNine OA</p>
+    {{ isMobile }}
     <p>SixNineNine OA</p>
     <p>SixNineNine OA</p>
     <p>SixNineNine OA</p>
@@ -97,6 +10,7 @@
 
 <script lang="ts" setup>
 import { useWrapper } from '~/components/wrapper/utils'
+import { isMobile } from '~/composables/isMobile'
 
 defineOptions({
     name: 'SiteMain',

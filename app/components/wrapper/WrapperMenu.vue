@@ -1,5 +1,6 @@
 <template>
     <div
+        v-if="!isMobile"
         :class="cn(
             'dark',
             'fixed z-10 top-0 bottom-0 start-0',
@@ -21,6 +22,7 @@
 
 <script lang="ts" setup>
 import { cn } from '~/lib/utils'
+import { isMobile } from '~/composables/isMobile'
 
 defineOptions({
     name: 'WrapperMenu',

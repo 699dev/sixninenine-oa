@@ -1,6 +1,7 @@
 <template>
     <SiteBody>
         <WrapperProvider>
+            <SiteMobileHeader />
             <WrapperContent>
                 <WrapperMenu />
                 <div
