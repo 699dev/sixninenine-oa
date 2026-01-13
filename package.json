@@ -2,6 +2,7 @@
     "name": "sixninenine-oa",
     "type": "module",
     "description": "SixNineNine OA System",
+    "packageManager": "pnpm@10.15.1",
     "homepage": "https://github.com/lonewolfyx/sixninenine-oa",
     "bugs": {
         "url": "https://github.com/lonewolfyx/sixninenine-oa/issues"
