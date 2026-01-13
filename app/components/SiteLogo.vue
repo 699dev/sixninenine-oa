@@ -3,7 +3,7 @@
         <NuxtLink href="/">
             <img
                 alt="SixNineNine OA"
-                class="w-full h-8"
+                class="w-full h-8 rounded-sm"
                 src="/logo.svg"
             >
         </NuxtLink>
