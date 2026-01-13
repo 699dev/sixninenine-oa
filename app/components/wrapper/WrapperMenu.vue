@@ -16,6 +16,39 @@
                     <SiteLogo />
                 </div>
             </div>
+            <ScrollArea class="overflow-hidden shrink-0 h-[calc(100vh-4.5rem)] lg:h-[calc(100vh-10rem)]">
+                s
+            </ScrollArea>
+            <div class="flex items-center shrink-0 px-2.5 py-5">
+                <Button
+                    as-child
+                    variant="ghost"
+                    class="w-full justify-between items-center"
+                >
+                    <div class="px-3 py-6 hover:bg-muted text-foreground rounded-xl">
+                        <div class="flex items-center space-x-3">
+                            <Avatar>
+                                <AvatarImage
+                                    alt="@Alfred-Skyblue"
+                                    src="https://github.com/Alfred-Skyblue.png"
+                                />
+                                <AvatarFallback>Alfred-Skyblue</AvatarFallback>
+                            </Avatar>
+                            <span class="text-sm font-medium font-mono">远方专用 OA</span>
+                        </div>
+                        <NuxtLink
+                            class="flex items-center"
+                            target="_blank"
+                            to="https://github.com/Alfred-Skyblue/reka"
+                        >
+                            <Icon
+                                class="w-5 h-5"
+                                name="line-md:github-loop"
+                            />
+                        </NuxtLink>
+                    </div>
+                </Button>
+            </div>
         </div>
     </div>
 </template>
