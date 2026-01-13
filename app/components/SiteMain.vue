@@ -49,15 +49,27 @@
             <template #eventContent="arg">
                 <div
                     v-if="arg.event.extendedProps.type === SKIP "
-                    class="relative px-2 py-1 bg-amber-200/50 rounded text-amber-950/80 text-xs truncate"
+                    class="relative px-2 py-1 bg-amber-200/50 rounded text-amber-950/80 text-xs"
                 >
-                    {{ arg.event.title }}
+                    <div class="flex justify-start items-center gap-1">
+                        <Icon
+                            mode="svg"
+                            name="healthicons:running-outline"
+                        />
+                        <span class="truncate">{{ arg.event.title }}</span>
+                    </div>
                 </div>
                 <div
                     v-if="arg.event.extendedProps.type === WORKING "
-                    class="relative px-2 py-1 bg-blue-200/50 rounded text-blue-950/80 text-xs truncate"
+                    class="relative px-2 py-1 bg-blue-200/50 rounded text-blue-950/80 text-xs"
                 >
-                    {{ arg.event.title }}
+                    <div class="flex justify-start items-center gap-1">
+                        <Icon
+                            mode="svg"
+                            name="lucide:tv-minimal-play"
+                        />
+                        <span class="truncate">{{ arg.event.title }}</span>
+                    </div>
                 </div>
             </template>
         </FullCalendar>
