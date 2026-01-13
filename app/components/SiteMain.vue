@@ -48,13 +48,13 @@
         >
             <template #eventContent="arg">
                 <div
-                    v-if="arg.event.extendedProps.type === 'skip' "
+                    v-if="arg.event.extendedProps.type === SKIP "
                     class="relative px-2 py-1 bg-amber-200/50 rounded text-amber-950/80 text-xs"
                 >
                     {{ arg.event.title }}
                 </div>
                 <div
-                    v-if="arg.event.extendedProps.type === 'working'"
+                    v-if="arg.event.extendedProps.type === WORKING "
                     class="relative px-2 py-1 bg-blue-200/50 rounded text-blue-950/80 text-xs"
                 >
                     {{ arg.event.title }}
@@ -73,6 +73,7 @@ import type { CalendarApi, CalendarOptions, DateSelectArg, EventClickArg } from 
 import { month } from '~/constant/month'
 import { eventsData } from '~/data/events'
 import type { IEventDataSourceInput } from '#shared/types/events'
+import { SKIP, WORKING } from '~/constant/common'
 
 defineOptions({
     name: 'SiteMain',
