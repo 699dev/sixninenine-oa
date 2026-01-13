@@ -22,16 +22,30 @@
                     >
                 </NuxtLink>
                 <div class="flex items-center gap-2">
-                    <Button
-                        variant="ghost"
-                        class="w-8 h-8"
-                    >
-                        <Icon
-                            class="text-muted-foreground size-4"
-                            mode="svg"
-                            name="lucide:menu"
-                        />
-                    </Button>
+                    <Drawer>
+                        <DrawerTrigger as-child>
+                            <Button
+                                class="w-8 h-8"
+                                variant="ghost"
+                            >
+                                <Icon
+                                    class="text-muted-foreground size-4"
+                                    mode="svg"
+                                    name="lucide:menu"
+                                />
+                            </Button>
+                        </DrawerTrigger>
+                        <DrawerContent>
+                            <div class="mx-auto w-full max-w-sm">
+                                <DrawerHeader>
+                                    <DrawerTitle>你想看什么？</DrawerTitle>
+                                </DrawerHeader>
+                                <div class="p-4 pb-8">
+                                    <span>请把视觉窗口调大点。</span>
+                                </div>
+                            </div>
+                        </DrawerContent>
+                    </Drawer>
                 </div>
             </div>
         </div>
