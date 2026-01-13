@@ -39,7 +39,7 @@
                         <NuxtLink
                             class="flex items-center"
                             target="_blank"
-                            to="https://github.com/Alfred-Skyblue/reka"
+                            to="https://github.com/699dev/sixninenine-oa"
                         >
                             <Icon
                                 class="w-5 h-5"
