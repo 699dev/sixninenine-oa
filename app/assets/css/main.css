@@ -143,7 +143,7 @@
 }
 
 @layer base {
-     .fc-theme-standard .fc-scrollgrid {
+    .fc-theme-standard .fc-scrollgrid {
         @apply !border-none;
     }
 
@@ -167,11 +167,15 @@
         @apply bg-black text-muted rounded
     }
 
-    .fc .fc-day-other{
+    .fc .fc-day-other {
         @apply bg-muted/25;
     }
 
-    .fc .fc-daygrid-day-frame{
+    .fc .fc-daygrid-day-frame {
         @apply h-40 overflow-auto;
+    }
+
+    .fc .fc-h-event {
+        @apply !bg-transparent !border-none;
     }
 }
