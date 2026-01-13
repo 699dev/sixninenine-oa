@@ -2,6 +2,7 @@
     <Button
         class="cursor-pointer"
         variant="ghost"
+        size="icon"
         @click="toggleSidebar"
     >
         <Icon
