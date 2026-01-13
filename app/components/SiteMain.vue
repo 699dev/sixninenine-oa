@@ -114,9 +114,10 @@ const calendarOptions: CalendarOptions = {
     selectable: false,
     // 允许拖拽时是否绘制“占位符”事件。
     selectMirror: false,
-    dayMaxEvents: false,
+    dayMaxEvents: true,
     // 是否在显示周末
     weekends: true,
+    contentHeight: 'auto',
     events: [
         {
             title: '请假',

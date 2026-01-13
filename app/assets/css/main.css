@@ -170,4 +170,8 @@
     .fc .fc-day-other{
         @apply bg-muted/25;
     }
+
+    .fc .fc-daygrid-day-frame{
+        @apply h-40 overflow-auto;
+    }
 }
