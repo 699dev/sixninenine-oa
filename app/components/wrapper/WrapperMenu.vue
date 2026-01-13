@@ -17,13 +17,48 @@
                 </div>
             </div>
             <ScrollArea class="overflow-hidden shrink-0 h-[calc(100vh-4.5rem)] lg:h-[calc(100vh-10rem)]">
-                s
+                <div class="w-full space-y-6 pt-6 lg:py-2 pb-6">
+                    <div class="px-4">
+                        <div class="sr-client">
+                            rl
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-3 px-4 font-mono">
+                        <div class="flex w-full items-center justify-between px-1">
+                            <div class="text-white text-sm font-medium">
+                                {{ calendar }}
+                            </div>
+                        </div>
+                        <div class="flex w-full flex-col gap-2">
+                            <div
+                                class="text-white bg-muted relative rounded-md p-2 pl-6 text-sm after:absolute after:inset-y-2 after:left-2 after:w-1 after:rounded-full after:bg-blue-500"
+                            >
+                                <div class="font-medium">
+                                    Work Living
+                                </div>
+                                <div class="text-muted-foreground text-xs">
+                                    21:15 PM - 00:30 AM
+                                </div>
+                            </div>
+                            <div
+                                class="text-white bg-muted relative rounded-md p-2 pl-6 text-sm after:absolute after:inset-y-2 after:left-2 after:w-1 after:rounded-full after:bg-amber-500"
+                            >
+                                <div class="font-medium">
+                                    Work Skiping
+                                </div>
+                                <div class="text-muted-foreground text-xs">
+                                    00:00 Am - 00:00 AM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </ScrollArea>
             <div class="flex items-center shrink-0 px-2.5 py-5">
                 <Button
                     as-child
-                    variant="ghost"
                     class="w-full justify-between items-center"
+                    variant="ghost"
                 >
                     <div class="px-3 py-6 hover:bg-muted text-foreground rounded-xl">
                         <div class="flex items-center space-x-3">
@@ -56,8 +91,14 @@
 <script lang="ts" setup>
 import { cn } from '~/lib/utils'
 import { isMobile } from '~/composables/isMobile'
+import dayjs from 'dayjs'
 
 defineOptions({
     name: 'WrapperMenu',
+})
+
+const calendar = computed(() => {
+    const date = dayjs()
+    return `${date.format('MMMM')} ${date.format('DD')}, ${date.year()}`
 })
 </script>
