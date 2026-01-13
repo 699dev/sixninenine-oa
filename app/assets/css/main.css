@@ -164,7 +164,7 @@
     }
 
     .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
-        @apply bg-black text-muted rounded
+        @apply bg-black text-muted rounded-full !px-1.5;
     }
 
     .fc .fc-day-other {
@@ -172,7 +172,7 @@
     }
 
     .fc .fc-daygrid-day-frame {
-        @apply h-40 overflow-auto;
+        @apply h-40 overflow-auto px-0.5 sm:px-1 py-1;
     }
 
     .fc .fc-h-event {
