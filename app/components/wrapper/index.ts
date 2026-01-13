@@ -1,0 +1,5 @@
+export { default as WrapperContent } from './WrapperContent.vue'
+export { default as WrapperProvider } from './WrapperProvider.vue'
+export { default as WrapperTrigger } from './WrapperTrigger.vue'
+export { default as WrapperMenu } from './WrapperMenu.vue'
+export { default as WrapperMain } from './WrapperMain.vue'
