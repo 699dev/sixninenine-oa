@@ -49,13 +49,13 @@
             <template #eventContent="arg">
                 <div
                     v-if="arg.event.extendedProps.type === SKIP "
-                    class="relative px-2 py-1 bg-amber-200/50 rounded text-amber-950/80 text-xs"
+                    class="relative px-2 py-1 bg-amber-200/50 rounded text-amber-950/80 text-xs truncate"
                 >
                     {{ arg.event.title }}
                 </div>
                 <div
                     v-if="arg.event.extendedProps.type === WORKING "
-                    class="relative px-2 py-1 bg-blue-200/50 rounded text-blue-950/80 text-xs"
+                    class="relative px-2 py-1 bg-blue-200/50 rounded text-blue-950/80 text-xs truncate"
                 >
                     {{ arg.event.title }}
                 </div>
