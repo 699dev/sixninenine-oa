@@ -45,7 +45,22 @@
         <FullCalendar
             ref="fullCalendarRef"
             :options="calendarOptions"
-        />
+        >
+            <template #eventContent="arg">
+                <div
+                    v-if="arg.event.extendedProps.type === 'skip' "
+                    class="relative px-2 py-1 bg-amber-200/50 rounded text-amber-950/80 text-xs"
+                >
+                    {{ arg.event.title }}
+                </div>
+                <div
+                    v-if="arg.event.extendedProps.type === 'working'"
+                    class="relative px-2 py-1 bg-blue-200/50 rounded text-blue-950/80 text-xs"
+                >
+                    {{ arg.event.title }}
+                </div>
+            </template>
+        </FullCalendar>
     </div>
 </template>
 
@@ -56,6 +71,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import type { CalendarApi, CalendarOptions, DateSelectArg, EventClickArg } from '@fullcalendar/core'
 import { month } from '~/constant/month'
+import { eventsData } from '~/data/events'
 
 defineOptions({
     name: 'SiteMain',
@@ -118,40 +134,7 @@ const calendarOptions: CalendarOptions = {
     // 是否在显示周末
     weekends: true,
     contentHeight: 'auto',
-    events: [
-        {
-            title: '请假',
-            start: '2026-01-12',
-            allDay: true,
-            extendedProps: {
-                description: '拉肚子',
-            },
-        },
-        {
-            title: '请假s',
-            start: '2026-01-12',
-            allDay: true,
-            extendedProps: {
-                description: '拉ss肚子',
-            },
-        },
-        {
-            title: '会议',
-            start: '2026-01-11T10:00:00',
-            end: '2026-01-11T12:00:00',
-            extendedProps: {
-                description: '团队周会',
-            },
-        },
-        // {
-        //     title: '项目截止日期',
-        //     start: '2026-01-20',
-        //     allDay: true,
-        //     extendedProps: {
-        //         description: '项目提交截止',
-        //     },
-        // },
-    ],
+    events: eventsData,
     eventClick: (info: EventClickArg) => {
         alert(`事件: ${info.event.title}\n描述: ${info.event.extendedProps.description}`)
     },
