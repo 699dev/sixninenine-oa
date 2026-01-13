@@ -72,6 +72,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import type { CalendarApi, CalendarOptions, DateSelectArg, EventClickArg } from '@fullcalendar/core'
 import { month } from '~/constant/month'
 import { eventsData } from '~/data/events'
+import type { IEventDataSourceInput } from '#shared/types/events'
 
 defineOptions({
     name: 'SiteMain',
@@ -119,8 +120,17 @@ const syncDateFromCalendar = (api: CalendarApi) => {
     currentMonth.value = viewDate.getMonth()
 }
 
+// 模拟异步获取事件数据
+const fetchEventsData = (): Promise<IEventDataSourceInput[]> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(eventsData)
+        }, 500)
+    })
+}
+
 // 日历选项配置
-const calendarOptions: CalendarOptions = {
+const calendarOptions: CalendarOptions = reactive({
     plugins: [
         dayGridPlugin, interactionPlugin,
     ],
@@ -128,13 +138,13 @@ const calendarOptions: CalendarOptions = {
     headerToolbar: false,
     // 允许通过点击和拖拽高亮多个日期或时间段
     selectable: false,
-    // 允许拖拽时是否绘制“占位符”事件。
+    // 允许拖拽时是否绘制"占位符"事件。
     selectMirror: false,
     dayMaxEvents: true,
     // 是否在显示周末
     weekends: true,
     contentHeight: 'auto',
-    events: eventsData,
+    events: [],
     eventClick: (info: EventClickArg) => {
         alert(`事件: ${info.event.title}\n描述: ${info.event.extendedProps.description}`)
     },
@@ -151,7 +161,11 @@ const calendarOptions: CalendarOptions = {
             calendarApi.unselect()
         }
     },
-}
+})
+
+onMounted(async () => {
+    calendarOptions.events = await fetchEventsData()
+})
 
 useResizeObserver(containerRef, () => {
     fullCalendarApi()?.updateSize()
