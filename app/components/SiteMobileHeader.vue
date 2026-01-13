@@ -25,7 +25,7 @@
                     <Drawer>
                         <DrawerTrigger as-child>
                             <Button
-                                class="w-8 h-8"
+                                class="w-8 h-8 cursor-pointer"
                                 variant="ghost"
                             >
                                 <Icon
