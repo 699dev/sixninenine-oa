@@ -18,7 +18,7 @@
             </div>
             <ScrollArea class="overflow-hidden shrink-0 h-[calc(100vh-4.5rem)] lg:h-[calc(100vh-10rem)]">
                 <div class="w-full space-y-6 pt-6 lg:py-2 pb-6">
-                    <div class="px-4">
+                    <div class="px-4 hidden">
                         <div class="sr-client">
                             rl
                         </div>
