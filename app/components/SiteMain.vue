@@ -35,7 +35,7 @@
                     </Button>
                 </div>
                 <h2 class="text-sm font-semibold sm:text-lg md:text-xl">
-                    {{ currentMonth }} {{ currentYear }}
+                    {{ month[currentMonth] }} {{ currentYear }}
                 </h2>
             </div>
             <div class="flex items-center gap-2">
@@ -55,6 +55,7 @@ import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import type { CalendarApi, CalendarOptions, DateSelectArg, EventClickArg } from '@fullcalendar/core'
+import { month } from '~/constant/month'
 
 defineOptions({
     name: 'SiteMain',
@@ -65,8 +66,8 @@ const { open } = useWrapper()
 const containerRef = useTemplateRef<HTMLElement | null>('containerRef')
 const fullCalendarRef = useTemplateRef<InstanceType<typeof FullCalendar> | null>('fullCalendarRef')
 
-const currentYear = ref(new Date().getFullYear())
-const currentMonth = ref(new Date().getMonth() + 1)
+const currentYear = ref<number>(new Date().getFullYear())
+const currentMonth = ref<number>(new Date().getMonth())
 
 const fullCalendarApi = (): CalendarApi | null => {
     return fullCalendarRef.value?.getApi() || null
@@ -99,7 +100,7 @@ const nextMonth = () => {
 const syncDateFromCalendar = (api: CalendarApi) => {
     const viewDate = api.view.currentStart
     currentYear.value = viewDate.getFullYear()
-    currentMonth.value = viewDate.getMonth() + 1
+    currentMonth.value = viewDate.getMonth()
 }
 
 // 日历选项配置
@@ -109,10 +110,12 @@ const calendarOptions: CalendarOptions = {
     ],
     initialView: 'dayGridMonth',
     headerToolbar: false,
-    editable: true,
-    selectable: true,
-    selectMirror: true,
+    // 允许通过点击和拖拽高亮多个日期或时间段
+    selectable: false,
+    // 允许拖拽时是否绘制“占位符”事件。
+    selectMirror: false,
     dayMaxEvents: false,
+    // 是否在显示周末
     weekends: true,
     events: [
         {
@@ -120,17 +123,25 @@ const calendarOptions: CalendarOptions = {
             start: '2026-01-12',
             allDay: true,
             extendedProps: {
+                description: '拉肚子',
+            },
+        },
+        {
+            title: '请假s',
+            start: '2026-01-12',
+            allDay: true,
+            extendedProps: {
+                description: '拉ss肚子',
+            },
+        },
+        {
+            title: '会议',
+            start: '2026-01-11T10:00:00',
+            end: '2026-01-11T12:00:00',
+            extendedProps: {
                 description: '团队周会',
             },
         },
-        // {
-        //     title: '会议',
-        //     start: '2026-01-15T10:00:00',
-        //     end: '2026-01-15T12:00:00',
-        //     extendedProps: {
-        //         description: '团队周会',
-        //     },
-        // },
         // {
         //     title: '项目截止日期',
         //     start: '2026-01-20',
