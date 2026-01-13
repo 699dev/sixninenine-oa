@@ -141,3 +141,18 @@
         @apply px-5;
     }
 }
+
+@layer base {
+    .fc-theme-standard .fc-scrollgrid{
+        @apply !border-none;
+    }
+    .fc-theme-standard th{
+        @apply !border-l-0 !border-r-0 border-b-red-500 border-b;
+    }
+    .fc .fc-col-header-cell-cushion{
+        @apply text-muted-foreground/70 py-2 text-center text-sm font-medium;
+    }
+    .fc .fc-daygrid-day-number{
+        @apply text-sm;
+    }
+}
