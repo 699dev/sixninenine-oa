@@ -209,4 +209,5 @@ export const eventsData: IEventDataSourceInput[] = [
     createEvent('直播', '2026-01-15'),
     createEvent('直播', '2026-01-19'),
     createEvent('直播', '2026-01-20'),
+    createEvent('直播', '2026-01-26'),
 ]
